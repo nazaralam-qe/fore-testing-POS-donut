@@ -30,10 +30,8 @@ export default {
         // "../features/Notifications/WA_notification.feature"
         // "../features/Catalog/Sticker.feature"
         // "../features/Catalog/homescreen.feature"
-        "../features/Pickup/Queue.feature",
-        // "../features/Order/Bundle.feature"
+        // "../features/Pickup/Queue.feature",
         // "../features/Login/ChangeCredential.feature",
-        // "../features/SG/singapore.feature"
 
     ],
     require: [

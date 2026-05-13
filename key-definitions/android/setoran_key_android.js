@@ -1,0 +1,23 @@
+export default class VoucherMenuKeyPOS {
+    // TRF VA ELIGIBLE
+    SETORAN_TRF_TAB_BUTTON = ``
+    SETORAN_HISTORY_TAB_BUTTON = ``
+    SETORAN_VA_LAYOUT = ``
+
+    // TRF VA NOT ELIGIBLE
+
+
+    //VA HISTORY DETAILS
+    HISTORY_PERIODE_TEXT = ``
+    HISTORY_TOTAL_SESTORAN_TEXT = ``
+    HISTORY_STATUS_TEXT = ``
+    HISTORY_VA_LIST_1 = ``
+    HISTORY_VA_LIST_2 = ``
+    HISTORY_VA_LIST_3 = ``
+    HISTORY_VA_LIST_4 = ``
+    HISTORY_VA_LIST_5 = ``
+
+
+
+
+}

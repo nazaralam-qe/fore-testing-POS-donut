@@ -36,7 +36,7 @@ class SettingPage {
         await Expect.elementDisplayed(SettingKey.SETTING_CHANGE_PASS_STORE);
         await Expect.clickElement(SettingKey.SETTING_CHANGE_PASS_STORE);
         await Expect.elementDisplayed(SettingKey.CHANGE_PASS_STORE_OLD_LOGO);
-        await Helper.sendText(SettingKey.CHANGE_PASS_STORE_OLD,"fore123123");
+        await Helper.sendText(SettingKey.CHANGE_PASS_STORE_OLD,"123456");
         await Expect.clickElement(SettingKey.CHANGE_PASS_STORE_OLD_VISIBLE);
         await Helper.sendText(SettingKey.CHANGE_PASS_STORE_NEW,"fore123456");
         await Expect.clickElement(SettingKey.CHANGE_PASS_STORE_NEW_VISIBLE);
@@ -49,9 +49,9 @@ class SettingPage {
         await Expect.clickElement(SettingKey.SETTING_CHANGE_PASS_STORE);
         await Helper.sendText(SettingKey.CHANGE_PASS_STORE_OLD,"fore123456");
         await Expect.clickElement(SettingKey.CHANGE_PASS_STORE_OLD_VISIBLE);
-        await Helper.sendText(SettingKey.CHANGE_PASS_STORE_NEW,"fore123123");
+        await Helper.sendText(SettingKey.CHANGE_PASS_STORE_NEW,"123456");
         await Expect.clickElement(SettingKey.CHANGE_PASS_STORE_NEW_VISIBLE);
-        await Helper.sendText(SettingKey.CHANGE_PASS_STORE_CONFIRM,"fore123123");
+        await Helper.sendText(SettingKey.CHANGE_PASS_STORE_CONFIRM,"123456");
         await Expect.clickElement(SettingKey.CHANGE_PASS_STORE_CONFIRM_VISIBLE);
         await Expect.clickElement(SettingKey.CHANGE_PASS_STORE_SUBMIT_BTN);
     }
@@ -64,9 +64,12 @@ class SettingPage {
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_2);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_3);
-        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_4);
-        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_5);
-        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_6);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_2);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_3);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_2);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_3);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_ENTER);
         await Expect.clickElement(SettingKey.CHANGE_BARISTA_PIN_OLD_VISIBLE);
         await Expect.clickElement(SettingKey.CHANGE_BARISTA_PIN_NEW);
@@ -105,9 +108,12 @@ class SettingPage {
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_2);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_3);
-        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_4);
-        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_5);
-        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_6);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_2);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_3);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_2);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_3);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_ENTER);
         await Expect.clickElement(SettingKey.CHANGE_BARISTA_PIN_NEW_VISIBLE);
         await Expect.clickElement(SettingKey.CHANGE_BARISTA_PIN_CONFIRM);
@@ -123,29 +129,29 @@ class SettingPage {
     }
 
 
-    async changePassStoreSG() {
-        await Expect.elementDisplayed(SettingKey.SETTING_CHANGE_PASS_STORE);
-        await Expect.clickElement(SettingKey.SETTING_CHANGE_PASS_STORE);
-        await Expect.elementDisplayed(SettingKey.CHANGE_PASS_STORE_OLD_LOGO);
-        await Helper.sendText(SettingKey.CHANGE_PASS_STORE_OLD,"bugis12345");
-        await Expect.clickElement(SettingKey.CHANGE_PASS_STORE_OLD_VISIBLE);
-        await Helper.sendText(SettingKey.CHANGE_PASS_STORE_NEW,"fore123456");
-        await Expect.clickElement(SettingKey.CHANGE_PASS_STORE_NEW_VISIBLE);
-        await Helper.sendText(SettingKey.CHANGE_PASS_STORE_CONFIRM,"fore123456");
-        await Expect.clickElement(SettingKey.CHANGE_PASS_STORE_CONFIRM_VISIBLE);
-        await Expect.clickElement(SettingKey.CHANGE_PASS_STORE_SUBMIT_BTN);
-    }
-
-    async changePassStoreDefaultSG() {
-        await Expect.clickElement(SettingKey.SETTING_CHANGE_PASS_STORE);
-        await Helper.sendText(SettingKey.CHANGE_PASS_STORE_OLD,"fore123456");
-        await Expect.clickElement(SettingKey.CHANGE_PASS_STORE_OLD_VISIBLE);
-        await Helper.sendText(SettingKey.CHANGE_PASS_STORE_NEW,"bugis12345");
-        await Expect.clickElement(SettingKey.CHANGE_PASS_STORE_NEW_VISIBLE);
-        await Helper.sendText(SettingKey.CHANGE_PASS_STORE_CONFIRM,"bugis12345");
-        await Expect.clickElement(SettingKey.CHANGE_PASS_STORE_CONFIRM_VISIBLE);
-        await Expect.clickElement(SettingKey.CHANGE_PASS_STORE_SUBMIT_BTN);
-    }
+    // async changePassStoreSG() {
+    //     await Expect.elementDisplayed(SettingKey.SETTING_CHANGE_PASS_STORE);
+    //     await Expect.clickElement(SettingKey.SETTING_CHANGE_PASS_STORE);
+    //     await Expect.elementDisplayed(SettingKey.CHANGE_PASS_STORE_OLD_LOGO);
+    //     await Helper.sendText(SettingKey.CHANGE_PASS_STORE_OLD,"bugis12345");
+    //     await Expect.clickElement(SettingKey.CHANGE_PASS_STORE_OLD_VISIBLE);
+    //     await Helper.sendText(SettingKey.CHANGE_PASS_STORE_NEW,"fore123456");
+    //     await Expect.clickElement(SettingKey.CHANGE_PASS_STORE_NEW_VISIBLE);
+    //     await Helper.sendText(SettingKey.CHANGE_PASS_STORE_CONFIRM,"fore123456");
+    //     await Expect.clickElement(SettingKey.CHANGE_PASS_STORE_CONFIRM_VISIBLE);
+    //     await Expect.clickElement(SettingKey.CHANGE_PASS_STORE_SUBMIT_BTN);
+    // }
+    //
+    // async changePassStoreDefaultSG() {
+    //     await Expect.clickElement(SettingKey.SETTING_CHANGE_PASS_STORE);
+    //     await Helper.sendText(SettingKey.CHANGE_PASS_STORE_OLD,"fore123456");
+    //     await Expect.clickElement(SettingKey.CHANGE_PASS_STORE_OLD_VISIBLE);
+    //     await Helper.sendText(SettingKey.CHANGE_PASS_STORE_NEW,"bugis12345");
+    //     await Expect.clickElement(SettingKey.CHANGE_PASS_STORE_NEW_VISIBLE);
+    //     await Helper.sendText(SettingKey.CHANGE_PASS_STORE_CONFIRM,"bugis12345");
+    //     await Expect.clickElement(SettingKey.CHANGE_PASS_STORE_CONFIRM_VISIBLE);
+    //     await Expect.clickElement(SettingKey.CHANGE_PASS_STORE_SUBMIT_BTN);
+    // }
 
 
 

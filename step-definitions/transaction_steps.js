@@ -2,6 +2,7 @@ import {Then, When} from "@wdio/cucumber-framework";
 import Helper from "../helper/helper.js";
 
 import PaymentPage from "../page-object/payments_pages.js";
+import SetoranPage from "../page-object/setoran_page.js";
 
 
 When(/^user verify payment method QRIS$/, async () => {
@@ -41,4 +42,9 @@ Then(/^user change payment$/, async () => {
 
 Then(/^user input phone number customer$/, async () => {
     await PaymentPage.inputNoWaCustomer();
+});
+
+// VA
+Then(/^the user verify VA page$/, async () => {
+    await SetoranPage.verifySetoranPage();
 });

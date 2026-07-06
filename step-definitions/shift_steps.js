@@ -51,6 +51,10 @@ Then(/^user shift should start successfully$/, async () => {
     await shift_page.verifyHomescreen();
 })
 
+Then(/^user shift should end successfully$/, async () => {
+    await shift_page.verifyHomescreen();
+})
+
 Then(/^user verify shift end displayed$/, async () => {
     await shift_page.verifyEndShiftBtn();
 })
@@ -58,4 +62,8 @@ Then(/^user verify shift end displayed$/, async () => {
 
 Then(/^user click shift end$/, async () => {
     await shift_page.clickEndShiftBtn();
+})
+
+Then(/^user verify shift start displayed$/, async () => {
+    await shift_page.verifyStartShiftBtn();
 })

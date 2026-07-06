@@ -13,7 +13,6 @@ class OrderPOSPage {
         await Expect.clickElement(CatalogPOS.ORDERS_INPUT_NAME_CUSTOMER);
         await Helper.pressKeyboard("test QA");
         await driver.pause(2000);
-        await Expect.clickElement(CatalogPOS.ORDERS_OFFLINE_SECTION_BUTTON);
         await Expect.clickElement(CatalogPOS.ORDERS_INPUT_ORDER_CUSTOMER_BUTTON);
     }
 

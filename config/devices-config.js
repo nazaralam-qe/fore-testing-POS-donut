@@ -42,7 +42,8 @@ export default {
         "./step-definitions/catalog_steps.js",
         "./step-definitions/transaction_steps.js",
         "./step-definitions/queue_steps.js",
-        "./step-definitions/create_sticker_steps.js"
+        "./step-definitions/create_sticker_steps.js",
+        "./step-definitions/donut_production_steps.js"
 
     ],
     runner: 'local',

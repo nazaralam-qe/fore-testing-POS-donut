@@ -88,20 +88,21 @@ class shiftPage {
     }
 
     async inputShift(){
-        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_3);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
-        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_3);
-        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_3);
-        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
-        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_2);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_4);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_5);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_5);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_ENTER);
         await driver.pause(1000);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_2);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_3);
-        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_4);
-        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_5);
-        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_6);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_2);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_3);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_2);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_3);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_ENTER);
         await driver.pause(3000);
         await Expect.clickElement(dashboardKey.VERIFY_BUTTON);
@@ -122,6 +123,11 @@ class shiftPage {
     async clickEndShiftBtn() {
         await driver.pause(3000);
         await Expect.clickElement(dashboardKey.SHIFT_END_BUTTON);
+        await driver.pause(1000);
+    }
+
+    async verifyStartShiftBtn() {
+        await Expect.elementDisplayed(dashboardKey.SHIFT_START_BUTTON);
         await driver.pause(1000);
     }
 

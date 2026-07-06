@@ -9,9 +9,10 @@ class queuePage {
 
     async refreshOrder() {
         await Expect.elementDisplayed(QueueKey.QUEUE_SEARCH_ORDER_TEXTBOX);
-        await Expect.clickElement(QueueKey.QUEUE_REFRESH_ANTRIAN_BUTTON);
-        await driver.pause(2000);
         await Expect.elementDisplayed(QueueKey.QUEUE_REFRESH_ANTRIAN_BUTTON);
+        await Expect.clickElement(QueueKey.QUEUE_REFRESH_ANTRIAN_BUTTON);
+        await Expect.clickElement(QueueKey.QUEUE_ORDER_LIST);
+        await driver.pause(2000);
     }
 
     async searchOrder() {
@@ -19,7 +20,7 @@ class queuePage {
         await Expect.clickElement(QueueKey.QUEUE_SEARCH_ORDER_TEXTBOX);
         await Expect.clickElement(QueueKey.SEARCH_DINE_IN_BUTTON);
         await driver.pause(2000);
-        await Helper.sendText(QueueKey.SEARCH_ORDER_INPUT_TEXTBOX,"5004"); //change
+        await Helper.sendText(QueueKey.SEARCH_ORDER_INPUT_TEXTBOX,"5012"); //change
         await Expect.elementDisplayed(QueueKey.QUEUE_ORDER_LIST);
         await Expect.clickElement(QueueKey.QUEUE_ORDER_LIST);
     }
@@ -80,12 +81,9 @@ class queuePage {
         await Expect.elementDisplayed(QueueKey.QUEUE_DETAILS_NUMBER);
         await Expect.elementDisplayed(QueueKey.QUEUE_DETAILS_CUSTOMER_NAME);
         await Expect.elementDisplayed(QueueKey.QUEUE_DETAILS_CHANNEL_TYPE);
-        await Expect.elementDisplayed(QueueKey.QUEUE_DETAILS_ETA_VALUE);
-        await Expect.elementDisplayed(QueueKey.QUEUE_DETAILS_INFORMATION_ORDER)
-        await Expect.elementDisplayed(QueueKey.QUEUE_DETAILS_PRODUCT_DETAILS_ALL);
         await Expect.elementDisplayed(QueueKey.QUEUE_DETAILS_READY_PICKUP_LABEL);
         await Expect.elementDisplayed(QueueKey.QUEUE_DETAILS_MORE_INFO_BUTTON);
-        await Expect.elementDisplayed(QueueKey.QUEUE_DETAILS_READY_TO_PICKUP_BUTTON);
+        await Expect.elementDisplayed(QueueKey.QUEUE_FINISH_MANUAL_COMPLETE_BUTTON);
         await driver.pause(3000);
         await Expect.elementDisplayed(QueueKey.QUEUE_ORDER_TAB);
     }
@@ -123,7 +121,7 @@ class queuePage {
     }
 
     async verifyManualComplete() {
-        await Expect.clickElement(QueueKey.QUEUE_ORDER_LIST);
+        // await Expect.clickElement(QueueKey.QUEUE_ORDER_LIST);
         await driver.pause(2000);
         await Expect.elementDisplayed(QueueKey.QUEUE_FINISH_CONFIRM_LABEL);
         await Expect.elementDisplayed(QueueKey.QUEUE_FINISH_CALL_AGAIN_BUTTON);

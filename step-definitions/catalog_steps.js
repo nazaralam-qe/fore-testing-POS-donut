@@ -21,9 +21,6 @@ When(/^user click Donut menu for Order$/, async () => {
 })
 
 
-When(/^user choose caffe latte for details menu$/, async () => {
-    await OrderPOSPage.clickCoffeeLatte();
-})
 
 
 When(/^system will show order on cart$/, async () => {

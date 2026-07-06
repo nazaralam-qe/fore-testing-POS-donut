@@ -4,3 +4,4 @@ Feature: transfer via Virtual Account
     Given the user opens the Fore POS
     And the user is directed to the homescreen
     When the user click setoran page
+    Then the user verify VA page

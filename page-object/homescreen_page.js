@@ -63,9 +63,9 @@ class HomescreenPage {
     }
 
     async clickSettingSection() {
-        await Helper.scrollRight();
-        await Helper.scrollRight();
-        await Helper.scrollRight();
+        // await Helper.scrollRight();
+        // await Helper.scrollRight();
+        // await Helper.scrollRight();
         await Expect.clickElement(HomescreenKey.HOMESCREEN_SETTINGS_BUTTON);
     }
 

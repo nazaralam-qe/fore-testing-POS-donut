@@ -10,7 +10,7 @@ export default class HomescreenMenuKeyPOS {
     HOMESCREEN_SETORAN_BUTTON =`//*[@resource-id="com.fore.donut.pos.dev:id/cv_menu_container"]`
     HOMESCREEN_PROMO_LIST_BUTTON = `//*[@content-desc="section_promo_list_button"]`
     HOMESCREEN_STOCK_MANAGEMENT_BUTTON = `//*[@content-desc="section_stock_management_button"]`
-    HOMESCREEN_SETTINGS_BUTTON = `//*[@content-desc="section_setting_button"]`
+    HOMESCREEN_SETTINGS_BUTTON = `//android.widget.FrameLayout[@content-desc="section_setting_button"]`
     HOMESCREEN_SERVER_CONNECTION_BUTTON = `//*[@content-desc="section_server_connection_button"]`
 
 

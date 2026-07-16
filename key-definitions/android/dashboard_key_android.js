@@ -19,7 +19,7 @@ export default class DashboardKeyPOS {
 
 
     // shift
-    SHIFT_INPUT_CASH_DRAWER = `//*[@content-desc="txtbox_title_input_cash_drawer"]`
+    SHIFT_INPUT_CASH_DRAWER = `//android.widget.EditText[@resource-id="com.fore.donut.pos.dev:id/inputbar_text"]`
     SHIFT_LOGO_CASH_DRAWER = `//*[@content-desc="cash_logo_icon"]`
     SHIFT_INPUT_REGULER_HOT =  `//*[@content-desc="regular_hot_total_cup_input"]`
     SHIFT_TEXT_REGULER_HOT =  `//*[@content-desc="regular_hot_subtitle"]`
@@ -36,6 +36,7 @@ export default class DashboardKeyPOS {
     BOTTOMSHEET_SHIFT_DESCRIPTION = `//*[@resource-id='com.fore.donut.pos.dev:id/modal_title_text']`
     BOTTOMSHEET_SHIFT_LIST_ORDER = `//*[@resource-id='com.fore.donut.pos.dev:id/rv']`
     BOTTOMSHEET_SHIFT_START_BUTTON = `//*[@resource-id="com.fore.donut.pos.dev:id/button_body"]`
+    BOTTOMSHEET_SHIFT_MULAI_BUTTON = `//android.widget.FrameLayout[@resource-id="com.fore.donut.pos.dev:id/button_body"]`
 
     BOTTOMSHEET_SHIFT_WARNING_IMG = `//*[@resource-id='com.fore.donut.pos.dev:id/img']`
     BOTTOMSHEET_SHIFT_WARNING_TITLE = `//*[@resource-id='com.fore.donut.pos.dev:id/warning_title']`

@@ -2,7 +2,7 @@ export default class CatalogPOSkey {
 
     // POS 1st ID
     ORDERS_BULK_SECTION_BUTTON = '//*[@content-desc="section_bulk_order_button"]'
-    ORDERS_OFFLINE_SECTION_BUTTON = '//*[@content-desc="section_offline_donut_button"]'
+    ORDERS_OFFLINE_SECTION_BUTTON = '//*[@content-desc="section_donut_offline_button"]'
     ORDERS_DINE_IN_SECTION_BUTTON = '//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[2]/android.view.View[1]'
     ORDERS_TAKE_AWAY_SECTION_BUTTON = '//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[2]/android.view.View[2]'
 
@@ -32,6 +32,8 @@ export default class CatalogPOSkey {
     ORDERS_DONUT_AYAM_POP_BY_SEARCH = '//android.view.ViewGroup[@resource-id="com.fore.donut.pos.dev:id/root"]'
     ORDERS_DONUT_AYAM_POP_BY_ORDER = '(//android.widget.FrameLayout[@resource-id="com.fore.donut.pos.dev:id/product_photo_card"])[4]'
 
+    ORDERS_DONUT_COFFEE_BRULEE_ORDER = '(//android.widget.ImageView[@resource-id="com.fore.donut.pos.dev:id/product_image"])[1]'
+
 
 
     // ADD TO CART
@@ -39,11 +41,11 @@ export default class CatalogPOSkey {
 
 
     // CART
-    ORDERS_CART_SHOW = '//androidx.recyclerview.widget.RecyclerView[@resource-id="com.fore.donut.pos.dev:id/rv_list_cart"]/android.view.ViewGroup'
+    ORDERS_CART_SHOW = '//androidx.recyclerview.widget.RecyclerView[@resource-id="com.fore.donut.pos.dev:id/rv_list_cart"]/android.view.ViewGroup[1]'
     ORDERS_PAYMENT_BUTTON = '//*[@resource-id="com.fore.donut.pos.dev:id/button_body"]'
-    ORDERS_BAG_BUTTON = '//*[@resource-id="com.fore.donut.pos.dev:id/container_eco_bag"]'
-    ORDERS_ADD_BAG_BUTTON = '//android.widget.LinearLayout[@resource-id="com.fore.donut.pos.dev:id/container_eco_bag"]/android.widget.ImageView'
-    ORDERS_VOUCHERS_BUTTON = '//*[@resource-id="com.fore.donut.pos.dev:id/img_choose_voucher"]'
+    ORDERS_BAG_BUTTON = '//androidx.recyclerview.widget.RecyclerView[@resource-id="com.fore.donut.pos.dev:id/rv_list_cart"]/android.view.ViewGroup[2]'
+    ORDERS_ADD_BAG_BUTTON = '//android.widget.LinearLayout[@resource-id="com.fore.donut.pos.dev:id/container_eco_bag"]'
+    ORDERS_VOUCHERS_BUTTON = '//android.view.ViewGroup[@resource-id="com.fore.donut.pos.dev:id/container_voucher"]'
     ORDERS_VOUCHERS_EXIST_BUTTON = '//android.view.ViewGroup[@resource-id="com.fore.donut.pos.dev:id/container_voucher"]'
 
 

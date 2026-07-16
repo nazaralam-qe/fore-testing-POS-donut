@@ -29,20 +29,10 @@ Then(/^user rollback to default of PIN barista$/, async () => {
     await SettingPage.changePinBaristaDefault();
 });
 
-
-// SG
-Then(/^user change password store SG$/, async () => {
-    await SettingPage.changePassStoreSG();
+Then(/^user log out$/, async () => {
+    await SettingPage.userLogOut();
 });
 
-Then(/^user change PIN barista SG$/, async () => {
-    await SettingPage.changePinBarista();
-});
-
-Then(/^user rollback to default of password store SG$/, async () => {
-    await SettingPage.changePassStoreDefaultSG();
-});
-
-Then(/^user rollback to default of PIN barista SG$/, async () => {
-    await SettingPage.changePinBaristaDefault();
+Then(/^user setting change base url to devapi2$/, async () => {
+    await SettingPage.setDevApi2();
 });

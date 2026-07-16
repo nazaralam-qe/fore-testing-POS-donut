@@ -57,7 +57,7 @@ class shiftPage {
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_ENTER);
         await Expect.elementDisplayed(dashboardKey.SHIFT_START_BUTTON);
         await Expect.clickElement(dashboardKey.SHIFT_START_BUTTON);
-        await Expect.clickElement(dashboardKey.BOTTOMSHEET_SHIFT_START_BUTTON);
+        // await Expect.clickElement(dashboardKey.BOTTOMSHEET_SHIFT_START_BUTTON);
     }
 
     async inputCashDrawerSG(){
@@ -88,21 +88,18 @@ class shiftPage {
     }
 
     async inputShift(){
-        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
+        await Expect.clickElement(dashboardKey.BOTTOMSHEET_SHIFT_START_BUTTON)
+        await Expect.clickElement(dashboardKey.BOTTOMSHEET_SHIFT_MULAI_BUTTON)
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_4);
-        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_5);
-        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_5);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_4);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_4);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_4);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_ENTER);
         await driver.pause(1000);
-        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_5);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_2);
-        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_3);
-        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
+        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_5);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_2);
-        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_3);
-        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
-        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_2);
-        await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_3);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_ENTER);
         await driver.pause(3000);
         await Expect.clickElement(dashboardKey.VERIFY_BUTTON);

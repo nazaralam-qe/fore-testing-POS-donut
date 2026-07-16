@@ -13,6 +13,8 @@ Feature: Voucher
 #    And user verify applied Voucher for order
 #    And user click "Bayar" button
 
+
+
   Scenario: Apply by search voucher and remove eligible voucher
     Given the user opens the Fore POS
     And the user is directed to the homescreen
@@ -25,3 +27,4 @@ Feature: Voucher
     And user verify applied Voucher for order
     And user verify delete voucher order
     And user Verify voucher button
+

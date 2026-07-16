@@ -40,15 +40,17 @@ class ProductionDonutPage {
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_ENTER);
-        await Helper.scrollDown()
-        await Helper.scrollDown()
-        await Helper.scrollDown()
+        // await Helper.scrollDown()
+        // await Helper.scrollDown()
+        // await Helper.scrollDown()
+        await driver.pause(3000);
         await Expect.elementDisplayed(donutKey.ONLINE_DONUT_COFFEE_BRULEE_IMG);
         await Expect.clickElement(donutKey.ONLINE_DONUT_COFFEE_BRULEE_input);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_2);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_ENTER);
-        await Expect.clickElement(loginKey.SUBMIT_PRODUCTION_DONUT_BUTTON);
+        await driver.pause(2000);
+        await Expect.clickElement(donutKey.SUBMIT_PRODUCTION_DONUT_BUTTON);
     }
 
     async createProductionDonutOnline() {
@@ -67,26 +69,29 @@ class ProductionDonutPage {
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_ENTER);
-        await Helper.scrollDown()
-        await Helper.scrollDown()
+        // await Helper.scrollDown()
+        // await Helper.scrollDown()
+        await driver.pause(2000);
         await Expect.elementDisplayed(donutKey.ONLINE_DONUT_CREME_BRULEE_IMG);
         await Expect.clickElement(donutKey.ONLINE_DONUT_CREME_BRULEE_input);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_2);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_ENTER);
-        await Helper.scrollDown()
+        // await Helper.scrollDown()
+        await driver.pause(2000);
         await Expect.elementDisplayed(donutKey.ONLINE_DONUT_COFFEE_BRULEE_IMG);
         await Expect.clickElement(donutKey.ONLINE_DONUT_COFFEE_BRULEE_input);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_2);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_ENTER);
-        await Expect.clickElement(loginKey.SUBMIT_PRODUCTION_DONUT_BUTTON);
+        await Expect.clickElement(donutKey.SUBMIT_PRODUCTION_DONUT_BUTTON);
     }
 
     async popUpPageConfirmDonutProduction() {
         await Expect.elementDisplayed(donutKey.POPUP_PAGE_SUBMIT_DONUT_TEXT);
         await Expect.elementDisplayed(donutKey.POPUP_PAGE_PERIKSA_KEMBALI_BUTTON);
         await Expect.elementDisplayed(donutKey.POPUP_PAGE_SUBMIT_BUTTON);
+        await Expect.clickElement(donutKey.POPUP_PAGE_SUBMIT_BUTTON);
         await driver.pause(2000);
         //staff id
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_3);
@@ -124,9 +129,9 @@ class ProductionDonutPage {
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_ENTER);
-        await Expect.clickElement(loginKey.ACTUAL_DONUT_CONFIRM_STOCK_BUTTON);
+        await Expect.clickElement(donutKey.ACTUAL_DONUT_CONFIRM_STOCK_BUTTON);
         await driver.pause(2000);
-        await Expect.clickElement(loginKey.ACTUAL_DONUT_SUBMIT_STOCK_BUTTON);
+        await Expect.clickElement(donutKey.ACTUAL_DONUT_SUBMIT_STOCK_BUTTON);
     }
 
     async confirmCreateDonutProductionOffline() {
@@ -147,9 +152,9 @@ class ProductionDonutPage {
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_2);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_1);
         await Expect.clickElement(loginKey.POS_STAFFID_PINPAD_ENTER);
-        await Expect.clickElement(loginKey.ACTUAL_DONUT_CONFIRM_STOCK_BUTTON);
+        await Expect.clickElement(donutKey.ACTUAL_DONUT_CONFIRM_STOCK_BUTTON);
         await driver.pause(2000);
-        await Expect.clickElement(loginKey.ACTUAL_DONUT_SUBMIT_STOCK_BUTTON);
+        await Expect.clickElement(donutKey.ACTUAL_DONUT_SUBMIT_STOCK_BUTTON);
         await driver.pause(2000);
     }
 

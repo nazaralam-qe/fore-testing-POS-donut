@@ -28,7 +28,6 @@ export default {
         // "../features/Catalog/Catalog.feature",
         // "../features/Voucher/Voucher.feature",
         // "../features/Notifications/WA_notification.feature"
-        // "../features/Catalog/Sticker.feature"
         // "../features/Catalog/homescreen.feature"
         // "../features/Pickup/Queue.feature",
         // "../features/Login/ChangeCredential.feature",

@@ -13,7 +13,7 @@ export default class VoucherMenuKeyPOS {
     VOUCHER_ELIGIBLE_USE_NOW_BUTTON = `//*[@resource-id="com.fore.donut.pos.dev:id/button_body"]`
 
     // SEARCH FEATURE FOR VOUCHER
-    VOUCHER_INPUT_TEXTBOX = `//*[@resource-id="com.fore.donut.pos.dev:id/inputbar_text"]`
+    VOUCHER_INPUT_TEXTBOX = `//*[@resource-id="com.fore.donut.pos.dev:id/search_voucher"]`
     VOUCHER_SEARCH_BUTTON = `//android.widget.FrameLayout[@resource-id="com.fore.donut.pos.dev:id/search_voucher_button"]`
     VOUCHER_APPLY_BY_SEARCH_BTN = `//*[@content-desc="text_item_voucher_in_cart"]`
 

@@ -16,6 +16,12 @@ When(/^user go to setting$/, async () => {
     await homescreen_page.scrollToSetting();
 });
 
+Then(/^the user is directed to the homescreen dev2$/, async () => {
+    await homescreen_page.clickHamburgerBtn();
+    await driver.pause(4000)
+    await Helper.scrollRight();
+});
+
 When(/^user go to setting section$/, async () => {
     await homescreen_page.clickHamburgerBtn();
     await homescreen_page.clickSettingSection();

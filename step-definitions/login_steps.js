@@ -21,6 +21,14 @@ Then(/^user input username$/, async () => {
 When(/^user input password$/, async () => {
     await loginPagePOS.inputPassword();
 })
+
+Then(/^user input username dev2$/, async () => {
+    await loginPagePOS.inputUsernameDev2();
+});
+When(/^user input password dev2$/, async () => {
+    await loginPagePOS.inputPasswordDev2();
+})
+
 Then(/^user click masuk$/, async () => {
     await loginPagePOS.clickMasuk();
 });

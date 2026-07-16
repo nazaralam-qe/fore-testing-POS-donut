@@ -11,9 +11,9 @@ When(/^user click production donut stock$/, async () => {
     await production_donut_page.clickProductionDonut();
 });
 
-When(/^user click production donut stock$/, async () => {
-    await production_donut_page.clickProductionDonut();
-});
+// When(/^user click production donut stock$/, async () => {
+//     await production_donut_page.clickProductionDonut();
+// });
 
 When(/^user create stock donut for offline stock$/, async () => {
     await production_donut_page.createProductionDonutOffline();

@@ -20,7 +20,7 @@ class queuePage {
         await Expect.clickElement(QueueKey.QUEUE_SEARCH_ORDER_TEXTBOX);
         await Expect.clickElement(QueueKey.SEARCH_DINE_IN_BUTTON);
         await driver.pause(2000);
-        await Helper.sendText(QueueKey.SEARCH_ORDER_INPUT_TEXTBOX,"5012"); //change
+        await Helper.sendText(QueueKey.SEARCH_ORDER_INPUT_TEXTBOX,"5004"); //change
         await Expect.elementDisplayed(QueueKey.QUEUE_ORDER_LIST);
         await Expect.clickElement(QueueKey.QUEUE_ORDER_LIST);
     }

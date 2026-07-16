@@ -18,6 +18,10 @@ When(/^user click start order button$/, async () => {
     await shift_page.verifyStart();
 })
 
+When(/^user click order button$/, async () => {
+    await shift_page.verifyStart();
+})
+
 Then(/^user click start shift button$/, async () => {
     await shift_page.verifyShiftStart();
 })

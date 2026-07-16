@@ -1,11 +1,9 @@
 Feature: Shift
 
   Scenario: User start shift needs to production donut first
-    Given the user start the Fore POS
-    And user click start order button
+    Given the user opens the Fore POS
+    And user click order button
     And user click start shift button
-    When user input 250 to cash drawer
-#    add production donut
     Then the user access production donut on Fore donut
     When user click production donut stock
     And user create stock donut for offline stock
@@ -16,8 +14,8 @@ Feature: Shift
 
 
   Scenario: User start shift ID
-    Given the user start the Fore POS
-    And user click start order button
+    Given the user opens the Fore POS
+    And user click order button
     And user click start shift button
     When user input 250 to cash drawer
     And user input staff identification

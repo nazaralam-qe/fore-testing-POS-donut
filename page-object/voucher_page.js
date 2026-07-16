@@ -34,7 +34,7 @@ class VoucherPage {
         await Expect.elementDisplayed(VoucherKey.VOUCHER_INPUT_TEXTBOX);
         await Expect.clickElement(VoucherKey.VOUCHER_INPUT_TEXTBOX);
         await driver.pause(2000);
-        await Helper.pressKeyboard("basket");
+        await Helper.pressKeyboard("offline");
         await Expect.elementDisplayed(VoucherKey.VOUCHER_SEARCH_BUTTON);
         await Expect.clickElement(VoucherKey.VOUCHER_SEARCH_BUTTON);
         await driver.pause(2000);

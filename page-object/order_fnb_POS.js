@@ -23,25 +23,15 @@ class OrderPOSPage {
 
     async clickDonutMenuBtn(){
         await driver.pause(2000);
-        await Expect.clickElement(CatalogPOS.ORDERS_DONUT_BOX_12_BUTTON);
-        await Expect.elementDisplayed(CatalogPOS.BOX_12_BUNDLE_1_BUTTON);
-        await Expect.clickElement(CatalogPOS.BOX_12_BUNDLE_1_BUTTON);
-        await Expect.clickElement(CatalogPOS.BOX_12_TIPE_DONUT_1_BUTTON);
-        await Expect.clickElement(CatalogPOS.BOX_12_TIPE_DONUT_ADD_1_BUTTON);
-        await Expect.clickElement(CatalogPOS.BOX_12_TIPE_DONUT_2_BUTTON);
-        await Expect.clickElement(CatalogPOS.BOX_12_TIPE_DONUT_ADD_2_BUTTON);
-        await Expect.clickElement(CatalogPOS.BOX_12_TIPE_DONUT_3_BUTTON);
-        await Expect.clickElement(CatalogPOS.BOX_12_TIPE_DONUT_ADD_3_BUTTON);
-        await Expect.elementDisplayed(CatalogPOS.BOX_12_BUNDLE_2_BUTTON);
-        await Expect.clickElement(CatalogPOS.BOX_12_BUNDLE_2_BUTTON);
-        await Expect.clickElement(CatalogPOS.BOX_12_TIPE_DONUT_1_BUTTON);
-        await Expect.clickElement(CatalogPOS.BOX_12_TIPE_DONUT_ADD_1_BUTTON);
-        await Expect.clickElement(CatalogPOS.BOX_12_TIPE_DONUT_ADD_1_BUTTON);
-        await Expect.clickElement(CatalogPOS.BOX_12_TIPE_DONUT_ADD_1_BUTTON);
-        await Expect.clickElement(CatalogPOS.BOX_12_TIPE_DONUT_ADD_1_BUTTON);
-        await Expect.clickElement(CatalogPOS.BOX_12_TIPE_DONUT_ADD_1_BUTTON);
+        await Expect.elementDisplayed(CatalogPOS.ORDERS_DONUT_COFFEE_BRULEE_ORDER);
+        await Expect.clickElement(CatalogPOS.ORDERS_DONUT_COFFEE_BRULEE_ORDER);
+        await Expect.clickElement(CatalogPOS.ORDERS_DONUT_COFFEE_BRULEE_ORDER);
+        await Expect.clickElement(CatalogPOS.ORDERS_DONUT_COFFEE_BRULEE_ORDER);
+        await Expect.clickElement(CatalogPOS.ORDERS_DONUT_COFFEE_BRULEE_ORDER);
+        await Expect.clickElement(CatalogPOS.ORDERS_DONUT_COFFEE_BRULEE_ORDER);
+        await Expect.clickElement(CatalogPOS.ORDERS_DONUT_COFFEE_BRULEE_ORDER);
         await Expect.elementDisplayed(CatalogPOS.MASUKKAN_KERANJANG_BUTTON);
-        await Expect.clickElement(CatalogPOS.MASUKKAN_KERANJANG_BUTTON);
+        // await Expect.clickElement(CatalogPOS.MASUKKAN_KERANJANG_BUTTON);
     }
 
     async verifyCartWithOrder(){

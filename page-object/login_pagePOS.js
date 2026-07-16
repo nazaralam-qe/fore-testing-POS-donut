@@ -39,6 +39,23 @@ class loginPagePOS {
         await Expect.clickElement(loginKey.POS_EYE_CLOSE_PASSWORD_STORE_ICON);
     }
 
+    async inputUsernameDev2() {
+        await Expect.elementDisplayed(loginKey.POS_LOGO_LOGIN_ICON);
+        await Expect.elementDisplayed(loginKey.POS_INPUT_USERNAME_STORE_TEXTBOX);
+        await Expect.clickElement(loginKey.POS_INPUT_USERNAME_STORE_TEXTBOX);
+        await driver.pause(2000);
+        await Helper.pressKeyboard(process.env.DEV2_USERNAME);
+    }
+
+    async inputPasswordDev2() {
+        await Expect.elementDisplayed(loginKey.POS_INPUT_PASSWORD_STORE_TEXTBOX);
+        await Expect.clickElement(loginKey.POS_INPUT_PASSWORD_STORE_TEXTBOX);
+        await driver.pause(2000);
+        await Helper.pressKeyboard(process.env.DEV2_PASSWORD);
+        await Expect.clickElement(loginKey.POS_EYE_OPEN_PASSWORD_STORE_ICON);
+        await Expect.clickElement(loginKey.POS_EYE_CLOSE_PASSWORD_STORE_ICON);
+    }
+
     async clickMasuk() {
         await Expect.elementExisting(loginKey.POS_CHANGE_LANGUAGE_BUTTON);
         await Expect.elementExisting(loginKey.POS_VERSION_LABEL);
@@ -76,7 +93,7 @@ class loginPagePOS {
 
     async verifyDashboardCashier(){
         await driver.pause(3000);
-        await Expect.clickElement(dashboardKey.HOMESCREEN_CLOSE_BUTTON);
+        // await Expect.clickElement(dashboardKey.HOMESCREEN_CLOSE_BUTTON);
         await Expect.clickElement(dashboardKey.DASHBOARD_START_ORDER_BUTTON);
         await Expect.elementExisting(dashboardKey.DASHBOARD_START_SHIFT_BUTTON);
 

@@ -14,7 +14,7 @@ class loginConfig {
             const username = process.env.TEST_USERNAME;
 
             if (!username) {
-                console.warn("⚠️ TEST_USERNAME tidak ditemukan di .env!");
+                console.warn("⚠️ TEST_USERNAME tidak ditemukan di .env.staging!");
                 return;
             }
 

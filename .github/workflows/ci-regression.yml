@@ -1,0 +1,176 @@
+name: CI Regression Tests
+
+on:
+  push:
+    branches:
+      - 'ai/**'
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: 'Platform to test'
+        required: true
+        type: choice
+        options:
+          - android
+          - ios
+        default: android
+      country:
+        description: 'Country to test'
+        required: true
+        type: choice
+        options:
+          - ID
+          - SG
+        default: ID
+
+jobs:
+  test:
+    runs-on: [fore-alam]
+
+    env:
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      TEST_USERNAME: ${{ secrets.TEST_USERNAME }}
+      TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
+      TEST_USERNAME_SG: ${{ secrets.TEST_USERNAME_SG }}
+      TEST_PASSWORD_SG: ${{ secrets.TEST_PASSWORD_SG }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Setup Android environment
+        run: |
+          echo "ANDROID_HOME=$HOME/Library/Android/sdk" >> $GITHUB_ENV
+          echo "$HOME/Library/Android/sdk/platform-tools" >> $GITHUB_PATH
+
+      - name: Verify emulator is running
+        run: |
+          echo "🔍 Checking for running emulator..."
+          if ! $ANDROID_HOME/platform-tools/adb devices | grep -q "emulator-5554"; then
+            echo "❌ Error: emulator-5554 not found!"
+            echo "Please ensure Tablet emulator is running before triggering CI"
+            exit 1
+          fi
+          echo "✅ Emulator emulator-5554 is running"
+          $ANDROID_HOME/platform-tools/adb devices
+
+      - name: Download APK from Google Drive
+        run: |
+          mkdir -p apps
+          FILE_ID="1-H6O9_eplqZQmuoQPb362CLlCDfocVuP"
+          echo "📥 Preparing to download APK from Google Drive..."
+          echo "🔗 File ID: $FILE_ID"
+          echo "⏳ Installing gdown (download helper)..."
+          pip3 install --user gdown
+          echo "⬇️  Downloading APK from Google Drive (this may take a while)..."
+          python3 -m gdown --id "$FILE_ID" -O apps/app.apk
+          ls -lh apps/app.apk
+          APK_SIZE=$(stat -f%z apps/app.apk 2>/dev/null || stat -c%s apps/app.apk)
+          if [ "$APK_SIZE" -lt 1000000 ]; then
+            echo "❌ Download failed: file is too small ($APK_SIZE bytes). Link may require permission."
+            exit 1
+          fi
+          echo "✅ Download success: APK saved to apps/app.apk ($APK_SIZE bytes)"
+
+      - name: Check / uninstall existing POS APK then install from Google Drive
+        run: |
+          ADB="$ANDROID_HOME/platform-tools/adb -s emulator-5554"
+          APP_PACKAGE="com.fore.coffee.pos.dev"
+
+          echo "🔍 Checking if Fore POS staging is installed ($APP_PACKAGE)..."
+          if $ADB shell pm path "$APP_PACKAGE" >/dev/null 2>&1; then
+            echo "⚠️  Fore POS staging found on emulator. Uninstalling first..."
+            $ADB uninstall "$APP_PACKAGE"
+            echo "✅ Uninstall success: $APP_PACKAGE removed"
+          else
+            echo "ℹ️  Fore POS staging not installed. Will install from Google Drive APK."
+          fi
+
+          echo "📲 Installing APK from apps/app.apk..."
+          $ADB install apps/app.apk
+          echo "✅ APK installed successfully on emulator-5554"
+
+
+      - name: Start Appium server
+        run: |
+          npx appium --port 4723 --allow-insecure=uiautomator2:adb_shell > appium.log 2>&1 &
+          echo $! > appium.pid
+          sleep 15
+          curl -s http://127.0.0.1:4723/status || (cat appium.log && exit 1)
+
+      - name: Setup test environment
+        run: |
+          mkdir -p reports
+          mkdir -p allure-results
+
+      - name: Create .env file with secrets
+        run: |
+          cat > .env << EOF
+          # Platform & Country Configuration
+          PLATFORM=${{ inputs.platform || 'android' }}
+          COUNTRY=${{ inputs.country || 'ID' }}
+
+          # Android Configuration
+          APP_PATH_ANDROID=./apps/app.apk
+          APP_PACKAGE_ANDROID=com.fore.coffee.pos.dev
+          APP_ACTIVITY_ANDROID=com.fore.coffee.pos.MainActivity
+          ANDROID_DEVICE=emulator-5554
+          ANDROID_UDID=emulator-5554
+          ANDROID_VERSION=15
+
+          # Appium Server
+          APPIUM_HOST=127.0.0.1
+          APPIUM_PORT=4723
+
+          # Database Configuration
+          DB_HOST=dbstaging2-fore.cly4iqqa0ma1.ap-southeast-1.rds.amazonaws.com
+          DB_PORT=3306
+          DB_USER=fore-devapi-2
+          DB_PASSWORD=${DB_PASSWORD}
+          DB_NAME=pandan_latte
+
+          # Test Configuration
+          SCREENSHOT_ONLY_ON_FAILURE=1
+          ENABLE_SCREEN_RECORD=0
+          RESTART=1
+          USE_DEVAPI2=1
+          EOF
+          echo "✅ .env file created with secrets"
+
+      - name: Run tests
+        env:
+          PLATFORM: ${{ inputs.platform || 'android' }}
+          COUNTRY: ${{ inputs.country || 'ID' }}
+          CI_SMOKE: 1
+        run: |
+          npm run clean
+          npx wdio run ./config/wdio.conf.js
+
+      - name: Generate Allure report
+        if: always()
+        run: npm run generate:report
+
+      - name: Upload Allure report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report-${{ inputs.platform || 'android' }}-${{ inputs.country || 'ID' }}
+          path: allure-report/
+          retention-days: 7
+
+      - name: Stop Appium server
+        if: always()
+        run: |
+          if [ -f appium.pid ]; then
+            kill $(cat appium.pid) || true
+            rm appium.pid
+          fi
+          pkill -f appium || true

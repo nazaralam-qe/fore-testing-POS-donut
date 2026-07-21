@@ -1,0 +1,14 @@
+# ============================================
+# CODEOWNERS — Auto-assign reviewers for PRs
+# ============================================
+# Docs: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# CI/CD workflows — require QA lead review
+.github/workflows/ @fore-coffee/qa-leads
+
+# Config changes — require QA lead review
+config/ @fore-coffee/qa-leads
+
+# Helper/framework changes — require QA lead review
+helper/ @fore-coffee/qa-leads
+services/ @fore-coffee/qa-leads

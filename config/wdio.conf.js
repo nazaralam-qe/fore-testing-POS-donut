@@ -1,5 +1,7 @@
 import dotenv from 'dotenv';
-dotenv.config();
+dotenv.config({ path: '.env.staging.staging', override: true });
+// .env.staging.staging = testing on staging
+// .env.staging.production = testing on production
 import {
     beforeSession,
     beforeScenario,

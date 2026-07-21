@@ -65,7 +65,7 @@ jobs:
       - name: Download APK from Google Drive
         run: |
           mkdir -p apps
-          FILE_ID="1-H6O9_eplqZQmuoQPb362CLlCDfocVuP"
+          FILE_ID="1TGxWLPx277EgLowk1z-B1UUDvIh4gnOh"
           echo "📥 Preparing to download APK from Google Drive..."
           echo "🔗 File ID: $FILE_ID"
           echo "⏳ Installing gdown (download helper)..."
@@ -78,7 +78,7 @@ jobs:
             echo "❌ Download failed: file is too small ($APK_SIZE bytes). Link may require permission."
             exit 1
           fi
-          echo "✅ Download success: APK saved to apps/app.apk ($APK_SIZE bytes)"
+          echo "✅ Download success: APK DONUT saved to apps/app.apk ($APK_SIZE bytes)"
 
       - name: Check / uninstall existing POS APK then install from Google Drive
         run: |
@@ -87,11 +87,11 @@ jobs:
 
           echo "🔍 Checking if Fore POS staging is installed ($APP_PACKAGE)..."
           if $ADB shell pm path "$APP_PACKAGE" >/dev/null 2>&1; then
-            echo "⚠️  Fore POS staging found on emulator. Uninstalling first..."
+            echo "⚠️  Fore POS DONUT staging found on emulator. Uninstalling first..."
             $ADB uninstall "$APP_PACKAGE"
             echo "✅ Uninstall success: $APP_PACKAGE removed"
           else
-            echo "ℹ️  Fore POS staging not installed. Will install from Google Drive APK."
+            echo "ℹ️  Fore POS DONUT staging not installed. Will install from Google Drive APK."
           fi
 
           echo "📲 Installing APK from apps/app.apk..."

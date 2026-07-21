@@ -20,18 +20,18 @@ export default {
         // },
     ],
     specs: [
-        // "../features/Login/LoginPOS.feature",
-        // "../features/Login/Shift.feature",
-        // "../features/Login/Setting.feature",
-        // "../features/transaction/generate_VA.feature",
-        // "../features/transaction/Payment.feature",
-        // "../features/Catalog/Catalog.feature",
-        // "../features/Voucher/Voucher.feature",
-        // "../features/Notifications/WA_notification.feature"
-        // "../features/Catalog/Sticker.feature"
-        // "../features/Catalog/homescreen.feature"
-        // "../features/Pickup/Queue.feature",
-        // "../features/Login/ChangeCredential.feature",
+        "../features/Login/LoginPOS.feature",
+        "../features/Login/Shift.feature",
+        "../features/Login/Setting.feature",
+        "../features/transaction/generate_VA.feature",
+        "../features/transaction/Payment.feature",
+        "../features/Catalog/Catalog.feature",
+        "../features/Voucher/Voucher.feature",
+        "../features/Notifications/WA_notification.feature"
+        "../features/Catalog/Sticker.feature"
+        "../features/Catalog/homescreen.feature"
+        "../features/Pickup/Queue.feature",
+        "../features/Login/ChangeCredential.feature",
 
     ],
     require: [
